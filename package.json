@@ -8,7 +8,9 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
     "jest-expo": "25.0.0",
+    "lint-staged": "^7.0.0",
     "prettier": "^1.11.1",
     "react-native-scripts": "1.11.1",
     "react-test-renderer": "16.2.0"
@@ -23,11 +25,14 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --write '*.js'",
-    "format-code":"npm run prettier && npm run lint:fix",
+    "format-code": "npm run prettier && npm run lint:fix",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js":["npm run format-code", "git add"]
+    "*.js": [
+      "npm run format-code",
+      "git add"
+    ]
   },
   "jest": {
     "preset": "jest-expo"
